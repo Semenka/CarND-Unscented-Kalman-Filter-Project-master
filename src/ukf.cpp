@@ -36,10 +36,10 @@ UKF::UKF() {
   std_yawdd_ = 0.5;
 
   // Laser measurement noise standard deviation position1 in m
-  std_laspx_ = 0.1;
+  std_laspx_ = 0.15;
 
   // Laser measurement noise standard deviation position2 in m
-  std_laspy_ = 0.1;
+  std_laspy_ = 0.15;
 
   L = MatrixXd(2,2);
   L <<
@@ -47,13 +47,13 @@ UKF::UKF() {
   0,std_laspy_*std_laspy_;
 
   // Radar measurement noise standard deviation radius in m
-  std_radr_ = 0.4;
+  std_radr_ = 0.3;
 
   // Radar measurement noise standard deviation angle in rad
-  std_radphi_ = 0.04;
+  std_radphi_ = 0.03;
 
   // Radar measurement noise standard deviation radius change in m/s
-  std_radrd_ = 0.1;
+  std_radrd_ = 0.3;
 
   R = MatrixXd(3,3);
   R <<
